@@ -1,4 +1,4 @@
-# MyShop - Flask Ecommerce Web Application
+# My Shop - Flask Ecommerce Web Application
 
 A full-stack ecommerce web app built using:
 
