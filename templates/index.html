@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="hero">
+    <h1>Welcome to MyShop</h1>
+    <p>Your one stop destination for everything.</p>
+
+    {% if not session.get('user_id') %}
+        <a href="/login" class="start-btn">Start Shopping</a>
+    {% endif %}
+</div>
+
+
+{% if session.get('user_id') %}
+
+<hr class="section-divider">
+
+<h2 class="section-title">Available Products</h2>
+
+<div class="main-layout">
+
+    <!-- MINI CART LEFT SIDE -->
+    <div class="mini-cart">
+        <h3>Your Cart</h3>
+
+        {% if cart_items %}
+            {% for item in cart_items %}
+                <div class="cart-item">
+                    <p class="cart-name">{{ item.name }}</p>
+                    <p class="cart-qty">Qty: {{ item.quantity }}</p>
+                    <p class="cart-subtotal">₹{{ item.subtotal }}</p>
+                </div>
+            {% endfor %}
+
+            <hr>
+            <h4 class="cart-total">Total: ₹{{ total }}</h4>
+            <a href="/cart" class="btn-view">View Full Cart</a>
+
+        {% else %}
+            <p class="empty-cart">Your cart is empty</p>
+        {% endif %}
+    </div>
+
+
+    <!-- PRODUCTS RIGHT SIDE -->
+    <div class="products-section">
+        <div class="products-container">
+
+            {% for product in products %}
+            <div class="product-card">
+
+                <h3 class="product-title">{{ product.name }}</h3>
+                <p class="price">₹{{ product.price }}</p>
+                <p class="stock">Stock: {{ product.stock }}</p>
+
+                {% if product.stock > 0 %}
+                <form action="/add_to_cart/{{ product.id }}" method="GET" class="add-form">
+
+                    <div class="qty-wrapper">
+                        <label>Qty:</label>
+                        <input type="number"
+                               name="quantity"
+                               value="1"
+                               min="1"
+                               max="{{ product.stock }}"
+                               class="qty-input">
+                    </div>
+
+                    <button type="submit" class="btn-add">
+                        Add to Cart
+                    </button>
+
+                </form>
+                {% else %}
+                    <p class="out-stock">Out of Stock</p>
+                {% endif %}
+
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+</div>
+
+{% endif %}
+
+{% endblock %}

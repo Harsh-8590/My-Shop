@@ -1,0 +1,9 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<h2>Add Product</h2>
+<form method="POST">
+  Name: <input type="text" name="name"><br>
+  Price: <input type="number" name="price"><br>
+  Stock: <input type="number" name="stock"><br>
+  <button type="submit">Add</button>
+</form>

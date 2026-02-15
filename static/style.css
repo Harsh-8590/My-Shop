@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2f3f7;
+    margin: 0;
+}
+
+/* Remove default blue link */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ---------------- NAVBAR ---------------- */
+.navbar {
+    background: #131921;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.navbar a {
+    color: white;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+.logout-btn {
+    background: #ff4d4d;
+    padding: 8px 14px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background: #e03c3c;
+}
+
+
+/* ---------------- LAYOUT ---------------- */
+.main-layout {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+.mini-cart {
+    width: 25%;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    height: fit-content;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+}
+
+.products-section {
+    width: 75%;
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+    transition: 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-3px);
+}
+
+.price {
+    font-weight: bold;
+    color: #b12704;
+}
+
+/* Quantity box */
+.qty-input {
+    width: 60px;
+    padding: 6px;
+    margin: 10px 0;
+}
+
+/* ---------------- BUTTONS ---------------- */
+.btn-add {
+    background: #ffd814;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.btn-add:hover {
+    background: #f7ca00;
+}
+
+.btn-view {
+    display: block;
+    background: #007185;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: 0.2s;
+}
+
+.btn-view:hover {
+    background: #005f6b;
+}
+
+
+/* ---------------- REMOVE BUTTON (UNDERLINED) ---------------- */
+.remove-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 14px;
+    color: #007185;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    color: #c45500;
+}
+
+
+/* ---------------- PLACE ORDER BUTTON ---------------- */
+.place-order {
+    display: block;
+    width: 320px;
+    margin: 40px auto;
+    padding: 16px 20px;
+    background: #28a745;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.place-order:hover {
+    background: #218838;
+}
